@@ -71,7 +71,6 @@ makePersonObject(5, 'Brit', 'bla@gmail.com');
 */
 
 function getName(object) {
-
   return 'Hello, my name is ' + object.name;
 }  
 
@@ -200,6 +199,12 @@ for(let i = 0; i < inventory.length; i++){
   }
 }
 
+// Could also do:
+// function getCarInfoById(inventory, id) {
+//   const car2 = inventory[id - 1]
+//   return `This is a ${car2.car_make} ${car2.car_model}`;
+// }
+
 /**
  * ### Challenge `sortCarInventory`
  * 
@@ -308,9 +313,16 @@ const argTimesTwo = (num) => num * 2;
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker() {}
-//   let updatedReading = [];
-// }
+function carMaker(odometer) {
+  let updatedReading = {
+    odometer: odometer,
+    drive: function(distance) {
+    updatedReading.odometer = updatedReading.odometer + distance;
+    return odometer + distance;
+    }
+  }
+  return updatedReading;
+} 
 
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
